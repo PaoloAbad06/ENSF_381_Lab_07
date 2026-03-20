@@ -90,7 +90,7 @@ try:
     labels = ['Headings', 'Links', 'Paragraphs']
     values = [heading_count, link_count, paragraph_count]
     plt.bar(labels, values)
-    plt.title('Put your Group# Here')
+    plt.title('33')
     plt.ylabel('Count')
     plt.xlabel('HTML Element')
     #plt.savefig('web_analysis_results.png') # Save the figure as an image file
