@@ -9,11 +9,14 @@ headers = {
     "User-Agent": "lab07-web-analyzer"
 }
 
+    # 2 == CRAWL THE UOFC WIKIPEDIA WEBPAGE
+
 try:
     response = requests.get(url, headers=headers)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, 'html.parser')
     print(f"Successfully fetched content from {url}")
+    print(soup.prettify())
 
     # 3. == DATA ANALYSIS ==
 
@@ -55,7 +58,7 @@ try:
 
     # 5 == KEYWORD SEARCH ==
 
-    keyword = input("Search Keyword: ")
+    keyword = input("\nSearch Keyword: ")
 
     keyword_lower = keyword.lower()
     keyword_count = text_lower.count(keyword_lower)
@@ -93,11 +96,8 @@ try:
     plt.title('33')
     plt.ylabel('Count')
     plt.xlabel('HTML Element')
-    #plt.savefig('web_analysis_results.png') # Save the figure as an image file
     plt.show()
 
-
-    ##print(soup.prettify())
 except Exception as e:
     print(f"Error fetching content: {e}")
 
